@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="CustomAttributes">
+        <attr name="textAppearanceButton1" format="reference" />
+    </declare-styleable>
+</resources>
