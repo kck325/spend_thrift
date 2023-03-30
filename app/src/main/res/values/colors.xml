@@ -14,4 +14,8 @@
     <color name="mediumBucketColor">#80CBC4</color>
     <color name="largeBucketColor">#4DB6AC</color>
     <color name="extraLargeBucketColor">#26A69A</color>
+    <color name="header_background_color">#F0F0F0</color>
+    <color name="border_color">#CCCCCC</color>
+    <color name="row_even">#FFFFFF</color>
+    <color name="row_odd">#F0F0F0</color>
 </resources>

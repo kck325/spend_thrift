@@ -1,24 +1,15 @@
 <resources>
-    <!-- Add custom fonts -->
-    <style name="TextAppearance.Fonts.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-    </style>
-    <style name="TextAppearance.Fonts.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="android:fontFamily">@font/roboto_condensed_regular</item>
-    </style>
-    <style name="TextAppearance.Fonts.Button" parent="TextAppearance.MaterialComponents.Button">
-        <item name="android:fontFamily">@font/roboto_medium</item>
-    </style>
-
-    <!-- Base application theme -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="textAppearanceHeadline1">@style/TextAppearance.Fonts.Headline1</item>
-        <item name="textAppearanceSubtitle1">@style/TextAppearance.Fonts.Subtitle1</item>
-        <item name="textAppearanceButton">@style/TextAppearance.Fonts.Button</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>
-

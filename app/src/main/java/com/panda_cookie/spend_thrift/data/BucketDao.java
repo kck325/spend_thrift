@@ -1,4 +1,4 @@
-package com.example.spend_thrift;
+package com.panda_cookie.spend_thrift.data;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
@@ -18,4 +18,11 @@ public interface BucketDao {
 
     @Query("SELECT * FROM buckets")
     List<Bucket> getAll();
+
+    @Query("SELECT * FROM buckets WHERE size = :bucketSize")
+    Bucket findByBucket(String bucketSize);
+
+    @Query("SELECT COUNT(*) FROM buckets")
+    int getRowCount();
+
 }

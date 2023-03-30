@@ -1,8 +1,4 @@
-package com.example.spend_thrift;
-
-import static com.example.spend_thrift.Size.*;
-import static com.example.spend_thrift.Size.MEDIUM;
-import static com.example.spend_thrift.Size.SMALL;
+package com.panda_cookie.spend_thrift.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,11 +11,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.room.Room;
 
-import com.example.spend_thrift.AppDatabase;
-import com.example.spend_thrift.Bucket;
-import com.example.spend_thrift.BucketDao;
+import com.panda_cookie.spend_thrift.MainActivity;
+import com.panda_cookie.spend_thrift.R;
+import com.panda_cookie.spend_thrift.Size;
+import com.panda_cookie.spend_thrift.data.AppDatabase;
+import com.panda_cookie.spend_thrift.data.Bucket;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -38,14 +35,22 @@ public class SettingsFragment extends Fragment {
 
     private EditText extraLargeValueEditText;
     private EditText extraLargeTimesEditText;
+    private Button saveButton;
+    private Button cancelButton;
 
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
-
+    public static SettingsFragment newInstance() {
+        return new SettingsFragment();
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+
+        saveButton = view.findViewById(R.id.save_button);
+        cancelButton = view.findViewById(R.id.cancel_button);
+        return view;
     }
 
     @Override
@@ -91,10 +96,20 @@ public class SettingsFragment extends Fragment {
             saveToDatabase("extra_large", extraLargeValueInput.getText().toString(), extraLargeTimesInput.getText().toString());
 
             Toast.makeText(getActivity(), "Settings saved", Toast.LENGTH_SHORT).show();
+            navigateToTokensFragment();
         });
+
+        cancelButton.setOnClickListener(v -> navigateToTokensFragment());
 
         // Load data from the database
         loadDataFromDatabase();
+    }
+
+    private void navigateToTokensFragment() {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        if (mainActivity != null) {
+            mainActivity.getSupportFragmentManager().popBackStack();
+        }
     }
 
 
@@ -143,31 +158,6 @@ public class SettingsFragment extends Fragment {
         }
     }
 
-}
 
-enum Size {
-    SMALL("small"),
-    MEDIUM("medium"),
-    LARGE("large"),
-    EXTRA_LARGE("extra_large");
-
-    private String stringValue;
-
-    Size(String stringValue) {
-        this.stringValue = stringValue;
-    }
-
-    public String getStringValue() {
-        return stringValue;
-    }
-
-    public static Size fromStringValue(String stringValue) {
-        for (Size size : Size.values()) {
-            if (size.getStringValue().equalsIgnoreCase(stringValue)) {
-                return size;
-            }
-        }
-        throw new IllegalArgumentException("Invalid string value for Size: " + stringValue);
-    }
 }
 

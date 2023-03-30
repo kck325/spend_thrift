@@ -1,4 +1,4 @@
-package com.example.spend_thrift;
+package com.panda_cookie.spend_thrift;
 
 import android.content.Context;
 

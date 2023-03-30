@@ -149,7 +149,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Month"
+                android:text="Quarter"
                 android:textSize="18sp"
                 android:gravity="center"
                 android:textColor="@color/black" />
@@ -217,6 +217,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
+        android:id="@+id/tokensUsedSaveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

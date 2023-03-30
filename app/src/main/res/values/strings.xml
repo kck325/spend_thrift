@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">spend_thrift</string>
+    <string name="app_name">Spend Tracker</string>
+    <string name="settings">Settings</string>
+    <string name="bucket_type">Spend Bucket</string>
+    <string name="goals_met">Met</string>
+    <string name="goals_missed">Missed</string>
 </resources>

@@ -1,8 +1,7 @@
-package com.example.spend_thrift;
+package com.panda_cookie.spend_thrift;
 
 import androidx.fragment.app.testing.FragmentScenario;
 import androidx.test.espresso.Espresso;
-import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Before;
@@ -16,6 +15,8 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
+import com.panda_cookie.spend_thrift.fragments.SettingsFragment;
 
 @RunWith(AndroidJUnit4.class)
 public class SettingsFragmentTest {

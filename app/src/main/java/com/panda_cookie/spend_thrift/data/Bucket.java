@@ -1,9 +1,11 @@
-package com.example.spend_thrift;
+package com.panda_cookie.spend_thrift.data;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import com.panda_cookie.spend_thrift.Size;
 
 @Entity(tableName = "buckets")
 public class Bucket {

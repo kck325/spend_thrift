@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.spend_thrift'
+    namespace 'com.panda_cookie.spend_thrift'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.spend_thrift"
+        applicationId "com.panda_cookie.spend_thrift"
         minSdk 24
         targetSdk 33
         versionCode 1
